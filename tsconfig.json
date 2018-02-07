@@ -14,8 +14,10 @@
         "baseUrl": ".",
         "jsx": "react",
         "paths":{
+            "component":["./src/component"],
             "pages":["./src/pages"],
             "entry":["./src/entry"],
+            "utils":["./src/utils"],
         },
     },
 }
