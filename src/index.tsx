@@ -1,8 +1,11 @@
-import * as React from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.scss';
 import { Routes } from 'entry';
 import { BrowserRouter } from 'react-router-dom';
 import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
+import registerServiceWorker from './registerServiceWorker';
 
 class App extends React.PureComponent<any, any> {
     render (){
@@ -16,4 +19,5 @@ class App extends React.PureComponent<any, any> {
     }
 }
 
-export default App;
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
