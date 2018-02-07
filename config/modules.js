@@ -6,7 +6,7 @@ module.exports = {
     // 项目页包
     pages: path.resolve(__dirname, "../src", "pages"),
 
-    // 路由配置包
+    // api目录-路由目-全局状态-录包
     entry: path.resolve(__dirname, "../src", "entry"),
 
     // 工具包
