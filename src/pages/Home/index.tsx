@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { TimePicker } from 'antd';
 import moment from 'moment';
+import mapping from './Redux.Mapping'
 import './index.scss';
 
 const logo = require('./logo.svg')
@@ -25,4 +26,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default mapping.connectIndex(Home);
