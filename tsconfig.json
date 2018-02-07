@@ -14,6 +14,8 @@
         "baseUrl": ".",
         "jsx": "react",
         "paths":{
+            "pages":["./src/pages"],
+            "entry":["./src/entry"],
         },
     },
 }
