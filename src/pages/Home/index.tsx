@@ -5,7 +5,7 @@ import './index.scss';
 
 const logo = require('./logo.svg')
 
-class App extends Component {
+class Home extends Component {
   render() {
     console.log(this.props)
     return (
@@ -25,4 +25,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
