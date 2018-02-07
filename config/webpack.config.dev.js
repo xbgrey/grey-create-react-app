@@ -82,7 +82,7 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
+    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx', '.ts', '.tsx'],
     alias: {
       
       // Support React Native Web
@@ -108,7 +108,7 @@ module.exports = {
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
       {
-        test: /\.(js|jsx|mjs)$/,
+        test: /\.(js|jsx|mjs|tsx?)$/,
         enforce: 'pre',
         use: [
           {
@@ -131,7 +131,7 @@ module.exports = {
           // smaller than specified limit in bytes as data URLs to avoid requests.
           // A missing `test` is equivalent to a match.
           {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            test: [/\.bmp$/, /\.gif$/, /\.svg$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),
             options: {
               limit: 10000,
@@ -140,7 +140,7 @@ module.exports = {
           },
           // Process JS with Babel.
           {
-            test: /\.(js|jsx|mjs)$/,
+            test: /\.(js|jsx|tsx?|mjs)$/,
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
@@ -151,13 +151,17 @@ module.exports = {
               cacheDirectory: true,
             },
           },
+          {
+            test: /\.tsx?$/,
+            use: [{loader: 'awesome-typescript-loader'}]
+          },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // "style" loader turns CSS into JS modules that inject <style> tags.
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css$/,
+            test: /\.(css|scss)$/,
             use: [
               require.resolve('style-loader'),
               {
@@ -186,6 +190,9 @@ module.exports = {
                   ],
                 },
               },
+              {
+                loader: "sass-loader"
+              }
             ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
@@ -198,7 +205,7 @@ module.exports = {
             // its runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+            exclude: [/\.(js|jsx|mjs|tsx?)$/, /\.html$/, /\.json$/],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
