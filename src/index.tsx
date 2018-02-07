@@ -1,23 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import { Routes } from 'entry';
-import { BrowserRouter } from 'react-router-dom';
-import { LocaleProvider } from 'antd';
-import zhCN from 'antd/lib/locale-provider/zh_CN';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import './index.css';
 
-class App extends React.PureComponent<any, any> {
-    render (){
-        return(
-            <LocaleProvider locale={zhCN}>
-                <BrowserRouter>
-                    <Routes/>
-                </BrowserRouter>
-            </LocaleProvider>
-        )
-    }
-}
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <App />,
+  document.getElementById('root') as HTMLElement
+);
 registerServiceWorker();
