@@ -1,25 +1,29 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "noImplicitUseStrict": true,
-    "noImplicitAny": false,
-    "alwaysStrict": false,
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
     "sourceMap": true,
     "allowJs": true,
-    "module": "CommonJS",
-    "target": "es2017",
-    "baseUrl": ".",
     "jsx": "react",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "baseUrl": ".",
     "paths":{
-        "global-status":["./src/globalStatus"],
-        "component":["./src/component"],
-        "pages":["./src/pages"],
-        "entry":["./src/entry"],
-        "utils":["./src/utils"]
+      "global-status":["./src/globalStatus"],
+      "component":["./src/component"],
+      "pages":["./src/pages"],
+      "entry":["./src/entry"],
+      "utils":["./src/utils"]
     }
   },
-  "include": ["./src/**/*.tsx","./src/**/*.ts"],
+  "include": ["./src/**/*.tsx"],
   "exclude": [
     "node_modules",
     "build",
