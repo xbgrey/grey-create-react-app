@@ -16,5 +16,5 @@ module.exports = {
     'component': path.resolve(__dirname, "../src", "component"),
 
     // 全局状态管理包
-    'global-status': path.resolve(__dirname, "../src", "globalStatus"),
+    'globalStatus': path.resolve(__dirname, "../src", "globalStatus"),
 };

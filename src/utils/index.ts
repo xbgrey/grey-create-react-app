@@ -1,5 +1,9 @@
-import Doc from './Doc';
+/** 
+ * 文件处理方法
+ */
+export { default as Doc } from './Doc';
 
-export default {
-    Doc
-};
+/** 
+ * 异步处理
+ */
+export { default as Generator } from './Generator';

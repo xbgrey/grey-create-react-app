@@ -1,11 +1,12 @@
 import * as React from 'react';
 import pages from 'pages';
 import { Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const Routes = () => (
-    <div>
+    <BrowserRouter>
         <Route exact={true} path="/" component={pages.Home} />
-    </div>
+    </BrowserRouter>
 );
 
 export default Routes;

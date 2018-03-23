@@ -1,5 +1,2 @@
-// 动作目录
-export { default as Types } from './ActionTypes';
-
-// 全局状态
-export { default as Status } from './reducers/Status';
+// 创建 Store
+export { default as createStore } from './createStore';

@@ -9,21 +9,21 @@
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
+    "noImplicitThis": false,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "baseUrl": ".",
     "paths":{
-      "global-status":["./src/globalStatus"],
+      "globalStatus":["./src/globalStatus"],
       "component":["./src/component"],
       "pages":["./src/pages"],
       "entry":["./src/entry"],
       "utils":["./src/utils"]
     }
   },
-  "include": ["./src/**/*.tsx"],
+  "include": ["./src/**/*.tsx","./src/**/*.ts"],
   "exclude": [
     "node_modules",
     "build",

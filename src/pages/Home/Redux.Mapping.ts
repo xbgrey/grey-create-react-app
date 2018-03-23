@@ -1,15 +1,13 @@
-import { connect } from 'react-redux';
-import { Types, Status } from 'global-status';
+const connect = require('react-redux').connect;
 
-const indexS2P = (state: Status) => {
-    return {
-        UserInfo: state.ui.UserInfo,
-    };
-};
+const indexS2P = () => (
+    {
+    }
+);
+
 const indexD2P = {
-    fnSetUserInfo: Types.User.fnSetUserInfo
 };
 
 export default {
-    connectIndex: Component => connect(indexS2P, indexD2P)(Component)
+    connectIndex: (Component: any) => connect(indexS2P, indexD2P)(Component)
 };
